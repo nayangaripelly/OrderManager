@@ -18,6 +18,7 @@ const orderSchema = zod.object({
     catagory: zod.enum(["electronic", "cosmetic","clothing","other" ]),
     status: zod.enum(["pending","shipped","delivered","cancelled" ]),
     cost: zod.number(),
+    deliveryDate : zod.coerce.date(),
     discount: zod.number().default(0)
 });
 

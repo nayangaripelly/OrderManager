@@ -18,6 +18,7 @@ const orderSchema = new schema({
     catagory: {type:String, enum:catagoryTypes, require:true},
     status: {type:String, enum:statusTypes, require:true},
     userId: {type: objectId, ref:"users" ,require:true},
+    deliveryDate : {type:Date, require:true},
     cost: {type: Number, require:true},
     discount: {type:Number, default: 0}
 });

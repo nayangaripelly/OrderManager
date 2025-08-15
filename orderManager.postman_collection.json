@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "5e44bd4c-992e-40b7-b8a2-7cdd6d735114",
+		"name": "orderManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47627036",
+		"_collection_link": "https://sainayan99-2685562.postman.co/workspace/sainayan's-Workspace~cc350f94-52dd-473e-869b-79a78a8178f7/collection/47627036-5e44bd4c-992e-40b7-b8a2-7cdd6d735114?action=share&source=collection_link&creator=47627036"
+	},
+	"item": [
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"johnwork@gmail.com\",\r\n    \"password\": \"john1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"johnwork@gmail.com\",\r\n    \"password\": \"john1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "160"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a0-33OxFPek18EAtO6uH2BQz1go35o\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 14:06:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8\"\n}"
+				}
+			]
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"john\",\r\n    \"email\": \"johnwork@gmail.com\",\r\n    \"password\": \"john1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john\",\r\n    \"email\": \"johnwork@gmail.com\",\r\n    \"password\": \"john1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-9xSjlW4uCfuwxYEaU7OGzFGEzJM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 17:24:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"signup successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "addOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"iphone\",\r\n    \"company\": \"apple\",\r\n    \"quantity\": 1,\r\n    \"catagory\": \"electronic\",\r\n    \"deliveryDate\":\"2025-08-20\",\r\n    \"status\": \"pending\",\r\n    \"cost\": 100000,\r\n    \"discount\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"iphone\",\r\n    \"company\": \"apple\",\r\n    \"quantity\": 1,\r\n    \"catagory\": \"electronic\",\r\n    \"deliveryDate\":\"2025-08-20\",\r\n    \"status\": \"pending\",\r\n    \"cost\": 100000,\r\n    \"discount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "286"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11e-h9xoSgDwNK/83iyRPM/RxfVF9Cs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 17:13:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"order created successfully\",\n    \"order\": {\n        \"name\": \"iphone\",\n        \"company\": \"apple\",\n        \"quantity\": 1,\n        \"catagory\": \"electronic\",\n        \"status\": \"pending\",\n        \"userId\": \"689f3eac73ca74e66960edb2\",\n        \"deliveryDate\": \"2025-08-20T00:00:00.000Z\",\n        \"cost\": 100000,\n        \"discount\": 5,\n        \"_id\": \"689f6acf9ca148fff57ba9c7\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getOrders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "250"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fa-g7DU7Y+R46U6tkn7+/4IAGghUNo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 17:14:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orders\": [\n        {\n            \"_id\": \"689f6acf9ca148fff57ba9c7\",\n            \"name\": \"iphone\",\n            \"company\": \"apple\",\n            \"quantity\": 1,\n            \"catagory\": \"electronic\",\n            \"status\": \"pending\",\n            \"userId\": \"689f3eac73ca74e66960edb2\",\n            \"deliveryDate\": \"2025-08-20T00:00:00.000Z\",\n            \"cost\": 100000,\n            \"discount\": 5,\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "editOrder",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"iphone\",\r\n    \"company\": \"apple\",\r\n    \"quantity\": 1,\r\n    \"catagory\": \"electronic\",\r\n    \"status\": \"pending\",\r\n    \"deliveryDate\":\"2025-08-20\",\r\n    \"cost\": 120000,\r\n    \"discount\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/orders/689f6acf9ca148fff57ba9c7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"689f6acf9ca148fff57ba9c7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"iphone\",\r\n    \"company\": \"apple\",\r\n    \"quantity\": 1,\r\n    \"catagory\": \"electronic\",\r\n    \"status\": \"pending\",\r\n    \"deliveryDate\":\"2025-08-20\",\r\n    \"cost\": 120000,\r\n    \"discount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/orders/689f6acf9ca148fff57ba9c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"689f6acf9ca148fff57ba9c7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "286"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11e-FWYuK0xvQkzzqOol1K68kkRvGHw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 17:15:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"order updated successfully\",\n    \"order\": {\n        \"_id\": \"689f6acf9ca148fff57ba9c7\",\n        \"name\": \"iphone\",\n        \"company\": \"apple\",\n        \"quantity\": 1,\n        \"catagory\": \"electronic\",\n        \"status\": \"pending\",\n        \"userId\": \"689f3eac73ca74e66960edb2\",\n        \"deliveryDate\": \"2025-08-20T00:00:00.000Z\",\n        \"cost\": 120000,\n        \"discount\": 5,\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteOrder",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/orders/689f6acf9ca148fff57ba9c7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"689f6acf9ca148fff57ba9c7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWYzZWFjNzNjYTc0ZTY2OTYwZWRiMiIsImlhdCI6MTc1NTI2Njc3N30.1oLYMP7zFdpYTV_18hS-XOrWkQcxj00PRTyAds-6BL8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/orders/689f6acf9ca148fff57ba9c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"689f6acf9ca148fff57ba9c7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-hSpP5WrBtaTv1HjlHFircps2shQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 17:15:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"order deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
