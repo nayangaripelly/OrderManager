@@ -54,4 +54,49 @@ orderRouter.get("/", userAuth, async (req:customReq, res) => {
     }
 });
 
+orderRouter.put("/:orderId", userAuth, async (req:customReq, res) => {
+    const { orderId } = req.params;
+    const { body } = req;
+    const orderCheck = orderSchema.safeParse(body);
+    if(!orderCheck.success)
+    {
+        res.status(400).json({message: "invalid data"});
+        return;
+    }
+    try{
+        const order = await orderModel.findOneAndUpdate({_id: orderId, userId: req.id}, body, {new: true});
+        if(!order)
+        {
+            res.status(404).json({message: "order not found"});
+            return;
+        }
+        res.status(200).json({message: "order updated successfully", order});
+        return;
+    }
+    catch(e)
+    {
+        res.status(500).json({message: "Internal server error"});
+        return;
+    }
+});
+
+orderRouter.delete("/:orderId", userAuth, async (req:customReq, res) => {
+    const { orderId } = req.params;
+    try{
+        const order = await orderModel.findOneAndDelete({_id: orderId, userId: req.id});
+        if(!order)
+        {
+            res.status(404).json({message: "order not found"});
+            return;
+        }
+        res.status(200).json({message: "order deleted successfully"});
+        return;
+    }
+    catch(e)
+    {
+        res.status(500).json({message: "Internal server error"});
+        return;
+    }
+});
+
 export default orderRouter;
