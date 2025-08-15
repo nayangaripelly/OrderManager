@@ -1,28 +1,57 @@
-import { Router } from "express";
+import express from "express";
 import { userAuth } from "./middlewares/userAuth.js";
-const router = Router();
+import { orderModel } from "./db.js";
+import zod from "zod";
+import {Request} from "express";
 
-router.use(userAuth);
+interface customReq extends Request {
+    id?: String
+}
 
-router.post("/",function(req, res)
-{
+const orderRouter = express.Router();
 
+const orderSchema = zod.object({
+    name: zod.string(),
+    description: zod.string().optional(),
+    company: zod.string().optional(),
+    quantity: zod.number().default(1),
+    catagory: zod.enum(["electronic", "cosmetic","clothing","other" ]),
+    status: zod.enum(["pending","shipped","delivered","cancelled" ]),
+    cost: zod.number(),
+    discount: zod.number().default(0)
 });
 
-
-router.put("/",function(req, res)
-{
-
+orderRouter.post("/", userAuth, async (req:customReq, res) => {
+    const { body } = req;
+    const orderCheck = orderSchema.safeParse(body);
+    if(!orderCheck.success)
+    {
+        res.status(400).json({message: "invalid data"});
+        return;
+    }
+    try{
+        const order = await orderModel.create({...body, userId: req.id});
+        res.status(200).json({message: "order created successfully", order});
+        return;
+    }
+    catch(e)
+    {
+        res.status(500).json({message: "Internal server error" });
+        return;
+    }
 });
 
-router.delete("/",function(req,res)
-{
-
+orderRouter.get("/", userAuth, async (req:customReq, res) => {
+    try{
+        const orders = await orderModel.find({userId: req.id});
+        res.status(200).json({orders});
+        return;
+    }
+    catch(e)
+    {
+        res.status(500).json({message: "Internal server error"});
+        return;
+    }
 });
 
-router.get("/",function(req,res)
-{
-
-});
-
-export default router;
+export default orderRouter;

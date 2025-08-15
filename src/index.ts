@@ -5,7 +5,12 @@ import zod from "zod";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import orderRoutes from "./orderRoutes.js";
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
+
+const mongourl = process.env.MONGO_URL as string;
+const jwtsecret = process.env.JWT_SECRET as string;
 
 app.use(express.json());
 
@@ -54,7 +59,7 @@ app.post("/api/v1/signin",async function(req, res)
         const user = await userModel.findOne({email});
         if(!user)
         {
-            res.status(400).json({message: "user not found"});
+            res.status(400).json({message: "user not found" });
             return;
         }
         const passwordCheck = await bcrypt.compare(password, user?.password as string);
@@ -63,7 +68,7 @@ app.post("/api/v1/signin",async function(req, res)
             res.status(400).json({message: "incorrect password"});
             return;
         }
-        const token = jwt.sign({id: user._id}, "secret");
+        const token = jwt.sign({id: user._id}, jwtsecret);
         res.status(200).json({token});
     }
     catch(e)
@@ -72,11 +77,11 @@ app.post("/api/v1/signin",async function(req, res)
     }
 });
 
-app.use("/orders",orderRoutes); // order related routes
+app.use("/api/v1/orders",orderRoutes); // order related routes
 
 async function main()
 {
-    await mongoose.connect("url");
+    await mongoose.connect(mongourl);
     app.listen(3000);
 }
 
