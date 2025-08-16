@@ -1,6 +1,8 @@
 # OrderManager
 
 A backend service to manage all the orders and to view their status.
+Can sort all the orders according to their deliveryDate, cost...
+Can separate orders based on company, catagory, and cost range of product present in order
 
 ## Prerequisites
 
